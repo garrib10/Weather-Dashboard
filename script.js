@@ -22,6 +22,13 @@ $(document).ready(function () {
          console.log(response)
         var card =$("<div>").addClass("card");
         var cardTitle =$("<h1>").addClass("card-title").text(response.name)
+
+        // Temp, Humidity, Wind Speed, and UV Index(need to add)
+        let temp = Math.round(((response.main.temp - 273.15) * 9/5 + 32))
+         console.log("The temperature in " + city + " is: " + temp);
+         $("#todayTemp").text("Temperature: " + temp + String.fromCharCode(176)+"F");
+         $("#todayHumidity").text("Humidity: " + response.main.humidity);
+         $("#todayWindSpeed").text("Wind Speed: " + response.wind.speed);
         $("#today").append(card.append(cardTitle))
         })
 
