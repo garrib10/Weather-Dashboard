@@ -4,12 +4,12 @@ $(document).ready(function () {
         var cityName = $("#search-city").val().trim()
         console.log(cityName)
         searchWeather(cityName)
-
+     //Clear Search button 
 
 
 
     })
-
+    // Add Clear History Button 
 
     function searchWeather(city) {
         $.ajax({
@@ -20,14 +20,20 @@ $(document).ready(function () {
             console.log(response)
             var card = $("<div>").addClass("card");
             var cardTitle = $("<h1>").addClass("card-title").text(response.name)
-
+           
             // Temp, Humidity, Wind Speed, and UV Index(need to add)
             let temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32))
             console.log("The temperature in " + city + " is: " + temp);
+            $("#cityName").text("Name:" + response.name);
             $("#todayTemp").text("Temperature: " + temp + String.fromCharCode(176) + "F");
             $("#todayHumidity").text("Humidity: " + response.main.humidity);
+            console.log(response.main.humidity);
             $("#todayWindSpeed").text("Wind Speed: " + response.wind.speed);
+            console.log(response.wind.speed);
             $("#today").append(card.append(cardTitle))
+            //UV Index
+
+            // Add 5 day forecast 
         })
 
 
