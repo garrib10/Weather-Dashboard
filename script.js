@@ -24,7 +24,7 @@ $(document).ready(function () {
             // Temp, Humidity, Wind Speed, and UV Index(need to add)
             let temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32))
             console.log("The temperature in " + city + " is: " + temp);
-            $("#cityName").text("Name:" + response.name);
+            $("#cityName").text(response.name);
             $("#todayTemp").text("Temperature: " + temp + String.fromCharCode(176) + "F");
             $("#todayHumidity").text("Humidity: " + response.main.humidity);
             console.log(response.main.humidity);
