@@ -31,7 +31,7 @@ $(document).ready(function () {
             $("#todayWindSpeed").text("Wind Speed: " + response.wind.speed + "MPH");
             console.log(response.wind.speed);
             $("#today").append(card.append(cardTitle));
-            //UV Index
+            //UV Index (Update as time )
             let lat = response.coord.lat;
             let lon = response.coord.lon;
             let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=1edce7f1650d0a15296eb7609bbca7a6 ";
