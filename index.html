@@ -27,7 +27,7 @@
                     <div class="input-group-append">
                         <button class="btn btn-primary" id="search-button">
                             <i class="fas fa-search"></i>
-                          </button>  
+                        </button>
                     </div>
                 </div>
                 <button class="btn btn-primary mb-3" type="button" id="clear-button">Clear history</button>
@@ -36,7 +36,7 @@
             <div class="col-8">
                 <dv class="row mr-0">
                     <div class="col-12 border border-dark m-3 rounded ">
-                    
+
                         <div class="col-12 " id="cityName"></div>
                         <div class="row">
                             <div class="col-12">
@@ -45,10 +45,46 @@
                                 <p id="todayTemp"></p>
                                 <p id="todayHumidity"></p>
                                 <p id="todayWindSpeed"></p>
-                                <img id ="todayIconDiv" src="">
+                                <img id="todayIconDiv" src="">
                             </div>
                         </div>
                     </div>
+                    <div class="five-day div  p-3 m-3 w-100">
+                        <div class="bg-light"></div>
+                            <h5 class="text-dark">5-Day Forecast:</h5>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div id="day0" class="card-body mx-2 my-2">
+                                <h5 id="0date"></h5>
+                                <p id="0five_day_temp"></p>
+                                <p id="0five_day_humidity"></p>
+                                <img id="0five_day_icon" src="">
+                            </div>
+                            <div id="day1" class="card-body mx-2 my-2">
+                                <h5 id="1date"></h5>
+                                <p id="1five_day_temp"></p>
+                                <p id="1five_day_humidity"></p>
+                                <img id="1five_day_icon" src="">
+                            </div>
+                            <div id="day2" class="card-body mx-2 my-2">
+                                <h5 id="2date"></h5>
+                                <p id="2five_day_temp"></p>
+                                <p id="2five_day_humidity"></p>
+                                <img id="2five_day_icon" src="">
+                            </div>
+                            <div id="day3" class="card-body mx-2 my-2">
+                                <h5 id="3date"></h5>
+                                <p id="3five_day_temp"></p>
+                                <p id="3five_day_humidity"></p>
+                                <img id="3five_day_icon" src="">
+                            </div>
+                            <div id="day4" class="card-body mx-2 my-2">
+                                <h5 id="4date"></h5>
+                                <p id="4five_day_temp"></p>
+                                <p id="4five_day_humidity"></p>
+                                <img id="4five_day_icon" src="">
+
+                            </div>
 
 
 
@@ -63,12 +99,12 @@
 
 
 
-
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-                        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-                        crossorigin="anonymous"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-                    <script src="script.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+                                integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+                                crossorigin="anonymous"></script>
+                            <script
+                                src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+                            <script src="script.js"></script>
 
 
 
