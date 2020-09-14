@@ -6,14 +6,14 @@ $(document).ready(function () {
         searchWeather(cityName)
     })
     // Clear History Function 
-    $("#clear-button").on("click", function () {
-        $(".card").remove();
-    })
+   $("#clear-button").on("click", function() {
+     $(".card").remove();
+     })
+    
+        
 
-
-
-
-
+        
+    
 
     function searchWeather(city) {
         $.ajax({
@@ -28,13 +28,15 @@ $(document).ready(function () {
             // Temp, Humidity, Wind Speed, and UV Index(need to add)
             let temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32))
             console.log("The temperature in " + city + " is: " + temp);
-            $("#cityName").text(response.name).val = today;
+            $("#cityName").text(response.name)
             $("#todayTemp").text("Temperature: " + temp + String.fromCharCode(176) + "F");
             $("#todayHumidity").text("Humidity: " + response.main.humidity + "%");
             console.log(response.main.humidity);
             $("#todayWindSpeed").text("Wind Speed: " + response.wind.speed + "MPH");
             console.log(response.wind.speed);
             $("#today").append(card.append(cardTitle));
+            $("#todayIconDiv").attr({"src": "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png",
+          "height": "100px", "width":"100px"});
             //UV Index (Update as time )
 
             // Add 5 day forecast 
@@ -54,7 +56,7 @@ $(document).ready(function () {
 
 
 
-
+    
 
 
 
