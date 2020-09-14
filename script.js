@@ -35,7 +35,7 @@ $(document).ready(function () {
             $("#todayWindSpeed").text("Wind Speed: " + response.wind.speed + "MPH");
             console.log(response.wind.speed);
             $("#today").append(card.append(cardTitle));
-            $("#todayIconDiv").attr({"src": "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png",
+            $("#todayIconDiv").attr({"src": "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png",
           "height": "100px", "width":"100px"});
             //UV Index (Update as time )
 
