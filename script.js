@@ -12,45 +12,76 @@ $(document).ready(function () {
     function searchWeather(city) {
         $.ajax({
             type: "get",
-            url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=1edce7f1650d0a15296eb7609bbca7a6",
+            url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=1edce7f1650d0a15296eb7609bbca7a6&units=imperial",
             dataType: "json",
         }).then(function (response) {
+            var temp = Math.round(response.main.temp);
             console.log(response)
             var card = $("<div>").addClass("card");
-            var cardTitle = $("<h1>").addClass("card-title").text(response.name)
-
-            // Temp, Humidity, Wind Speed, and UV Index(need to add)
-            let temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32))
-            console.log("The temperature in " + city + " is: " + temp);
-            $("#cityName").text(response.name)
-            $("#todayTemp").text("Temperature: " + temp + String.fromCharCode(176) + "F");
-            $("#todayHumidity").text("Humidity: " + response.main.humidity + "%");
-            console.log(response.main.humidity);
-            $("#todayWindSpeed").text("Wind Speed: " + response.wind.speed + "MPH");
-            console.log(response.wind.speed);
-            $("#today").append(card.append(cardTitle));
-            $("#todayIconDiv").attr({
+            var cardBody = $("<div>").addClass("card-body");
+            var cardTitle = $("<h1>").addClass("card-title").text(response.name);
+            var tempDisplay = $("<h2>").addClass("card-text").text("Temperature: " + temp + String.fromCharCode(176) + "F");
+            var humidityDisplay = $("<h3>").addClass("card-text").text("Humidity: " + response.main.humidity + "%");
+            var windspeedDisplay = $("<h4>").addClass("card-text").text("Wind Speed: " + response.wind.speed + "MPH");
+            var imageIcon = $("<img>").addClass("card-image").attr({
                 "src": `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
-                "height": "100px", "width": "100px",
-             
-            });
-           
-            //UV Index (Update as time )
+                "height": "100px", "width": "100px"
+            })
+            // Temp, Humidity, Wind Speed, and UV Index(need to add)
 
-            // Add 5 day forecast 
+            cardTitle.append(imageIcon);
+            cardBody.append(cardTitle, tempDisplay, humidityDisplay, windspeedDisplay);
+            card.append(cardBody);
+            $("#today").append(card);
+
+            getForecast(response.coord.lat,response.coord.lon)
+        });
+
+        //UV Index (Update as time )
+
+        // Add 5 day forecast 
+
+        function getForecast (lat,lon){
+        $.ajax ({
+          type: "get",
+          dataType:"JSON",
+          url: `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=1edce7f1650d0a15296eb7609bbca7a6&units=imperial`,
+
+        }).then(function(weatherData){
+
+
+                for(var i =1; i < 6; i++){
+                    console.log(weatherData.daily[i])
+                    var day = weatherData.daily[i]
+               // Add Card Titles for Days 
+
+
+
+
+
+                }
+            
+
         })
 
+ 
 
 
 
-       
-       
-             
-                
+        }
+    }
 
-                    
-                
-    }     
+
+
+
+
+
+
+
+
+
+
+}) 
     
 
 
@@ -59,4 +90,3 @@ $(document).ready(function () {
 
 
 
-    }) 
