@@ -26,8 +26,9 @@ $(document).ready(function () {
             var imageIcon = $("<img>").addClass("card-image").attr({
                 "src": `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
                 "height": "100px", "width": "100px"
+            //UV Index// 
             })
-            // Temp, Humidity, Wind Speed, and UV Index(need to add)
+            
 
             cardTitle.append(imageIcon);
             cardBody.append(cardTitle, tempDisplay, humidityDisplay, windspeedDisplay);
@@ -38,9 +39,7 @@ $(document).ready(function () {
         });
 
         //UV Index (Update as time )
-
-        // Add 5 day forecast 
-
+        // 5-Day Forecast 
         function getForecast (lat,lon){
         $.ajax ({
           type: "get",
@@ -53,7 +52,8 @@ $(document).ready(function () {
                 for(var i =1; i < 6; i++){
                     console.log(weatherData.daily[i])
                     var day = weatherData.daily[i]
-               // Add Card Titles for Days 
+                    // Add Moment js to this using (DT parameters) 
+                    // Add Card Titles for Days 
 
 
 
