@@ -29,9 +29,10 @@ $(document).ready(function () {
             var windspeedDisplay = $("<h4>").addClass("card-text").text("Wind Speed: " + response.wind.speed + "MPH");
             var imageIcon = $("<img>").addClass("card-image").attr({
                 "src": `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
-                "height": "100px", "width": "100px"
-
-            })
+                "height": "100px", "width": "100px",
+       
+           
+        })
             
             cardTitle.append(imageIcon);
             cardBody.append(cardTitle, tempDisplay, humidityDisplay, windspeedDisplay);
@@ -45,6 +46,7 @@ $(document).ready(function () {
         }); 
 
         //UV Index (Update as time )
+        
         // 5-Day Forecast 
         function getForecast(lat, lon) {
             $.ajax({
@@ -53,11 +55,12 @@ $(document).ready(function () {
                 url: `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=1edce7f1650d0a15296eb7609bbca7a6&units=imperial`,
 
             }).then(function (weatherData) {
-
-
+                 console.log(lat,lon)
+                
                 for (var i = 1; i < 6; i++) {
                     console.log(weatherData.daily[i])
                     var day = weatherData.daily[i]
+                   
                     // Add Moment js to this using (DT parameters) 
                     // Add Card Titles for Days 
 
