@@ -18,7 +18,7 @@ $(document).ready(function () {
             dataType: "json",
         }).then(function (response) {
           // Fix Moment for Card (#today puts it back in column)
-            var currentDate = moment().format('L')
+            var currentDate = moment().format('l');
             var temp = Math.round(response.main.temp);
             console.log(response)
             var card = $("<div>").addClass("card");
@@ -33,8 +33,9 @@ $(document).ready(function () {
        
            
         })
+            // Add currentDate to cardTitle with space between imageIcon 
+            cardTitle.append(imageIcon)
             
-            cardTitle.append(imageIcon);
             cardBody.append(cardTitle, tempDisplay, humidityDisplay, windspeedDisplay);
             card.append(cardBody);
             //Fix this (change the div class to get it to work )
@@ -46,7 +47,6 @@ $(document).ready(function () {
         }); 
 
         //UV Index (Update as time )
-        
         // 5-Day Forecast 
         function getForecast(lat, lon) {
             $.ajax({
@@ -61,6 +61,7 @@ $(document).ready(function () {
                     console.log(weatherData.daily[i])
                     var day = weatherData.daily[i]
                    
+
                     // Add Moment js to this using (DT parameters) 
                     // Add Card Titles for Days 
 
