@@ -33,7 +33,7 @@ $(document).ready(function () {
        
            
         })
-            // Add currentDate to cardTitle with space between imageIcon 
+            // Add currentDate to cardTitle with space between image Icon
             cardTitle.append(imageIcon)
             
             cardBody.append(cardTitle, tempDisplay, humidityDisplay, windspeedDisplay);

@@ -1,6 +1,5 @@
 06 Server-Side APIs: Weather Dashboard
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
-Use the OpenWeather API to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use localStorage to store any persistent data.
+For this assignment, we were told to make a weather dashboard using an api from openweathermap.org We are told to create a search button, and when you type in a city name you are given the current temperature,humidity,windspeed, UV Index, and a weather icon describing the current weather. We are told to add a moment.js to get the current date, and to help with our 5-day forecast for that week. 
 
 Acceptance Criteria
 - GIVEN a weather dashboard with form inputs
@@ -16,3 +15,5 @@ Acceptance Criteria
 - THEN I am again presented with current and future conditions for that city
 - WHEN I open the weather dashboard
 - THEN I am presented with the last searched city forecast
+
+ Link to Deployed Site: 
