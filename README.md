@@ -18,4 +18,4 @@ Acceptance Criteria is the following:
 - WHEN I open the weather dashboard
 - THEN I am presented with the last searched city forecast
 
- Link to Deployed Site: ## [Weather Dashboard ](https://garrib10.github.io/Weather-Dashboard/.)
+ Link to Deployed Site: [Weather Dashboard ](https://garrib10.github.io/Weather-Dashboard/.)
