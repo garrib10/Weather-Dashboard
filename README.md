@@ -1,6 +1,7 @@
 
 
 06 Server-Side APIs: Weather Dashboard
+<br>
 For this assignment, we were told to make a weather dashboard using an api from openweathermap.org We are told to create a search button, and when you type in a city name you are given the current temperature,humidity,windspeed, UV Index, and a weather icon describing the current weather. We are told to add a moment.js to get the current date, and to help with our 5-day forecast for that week. 
 
 Acceptance Criteria is the following: 
