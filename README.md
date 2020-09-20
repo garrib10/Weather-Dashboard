@@ -20,3 +20,5 @@ Acceptance Criteria is the following:
 - THEN I am presented with the last searched city forecast
 
  Link to Deployed Site: [Weather Dashboard ](https://garrib10.github.io/Weather-Dashboard/.)
+ 
+ <img width="1270" alt="Screen Shot 2020-09-19 at 9 13 28 PM" src="https://user-images.githubusercontent.com/68867054/93692134-444ecf80-fabd-11ea-8041-69ea012980df.png">
