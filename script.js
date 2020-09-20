@@ -17,7 +17,6 @@ $(document).ready(function () {
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=1edce7f1650d0a15296eb7609bbca7a6&units=imperial",
             dataType: "json",
         }).then(function (response) {
-            // Fix Moment for Card (#today puts it back in column)
             var currentDate = moment().format('l');
             var temp = Math.round(response.main.temp);
             console.log(response)
@@ -31,7 +30,8 @@ $(document).ready(function () {
             var imageIcon = $("<img>").addClass("card-image").attr({
                 "src": `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
                 "height": "100px", "width": "100px",
-
+               
+        
 
             })
             // Add currentDate to cardTitle with space between image Icon
@@ -47,7 +47,6 @@ $(document).ready(function () {
 
         });
 
-        //UV Index (Update as time )
         // 5-Day Forecast 
         function getForecast(lat, lon) {
             $.ajax({
@@ -65,9 +64,6 @@ $(document).ready(function () {
                 }
                 var date = moment().unix(day.dt);
 
-                
-
-
                 var dayCard = $("<div>");
 
                 dayCard.addClass("card col-md-5 daycard");
@@ -80,17 +76,19 @@ $(document).ready(function () {
 
                 var dayCardName = $("<h6>");
                 dayCardName.addClass("card-title");
-               
+
                 dayCardBody.append(dayCardName);
-                // Weather Icon 
-                var weatherIcon = $("<img>");
-                var iconCode = weatherData.weather;
-                var iconUrl = `http://openweathermap.org/img/wn/${weatherData.weather}@2x.png`;
-                weatherIcon.attr("src", iconUrl);
-                var dayTemp = $("<p>").addClass("Temperature: " + weatherData.temp + String.fromCharCode(176) + "F");
-                var dayHumidity = $("<p>").addClass("card-text").text("Humidity: " + weatherData.main.humidity + "%");
-                dayCardBody.append(weatherIcon,iconCode, dayTemp, dayHumidity);
-                //Moment Js using (DT parameters)
+                // Day Temp and Humidiy // 
+                var dayTemp = $("<p>").addClass("card-text").text("Temperature: " + weatherData.temp + String.fromCharCode(176) + "F");
+                var dayHumidity = $("<p>").addClass("card-text").text("Humidity: " + weatherData.humidity + "%");
+                // UV Index 
+                var uvIndex= $("<p>").addClass("card-text").text("UV Index" + weatherData.uvi);
+                console.log(uvIndex)
+                dayCardBody.append( dayTemp, dayHumidity);
+                
+     
+                
+        
 
 
 
@@ -105,14 +103,14 @@ $(document).ready(function () {
             })
         }
     }
-            
 
 
 
 
 
-        
-    
+
+
+
 
 
 
